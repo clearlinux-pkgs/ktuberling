@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : ktuberling
-Version  : 19.04.1
-Release  : 8
-URL      : https://download.kde.org/stable/applications/19.04.1/src/ktuberling-19.04.1.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.04.1/src/ktuberling-19.04.1.tar.xz
-Source99 : https://download.kde.org/stable/applications/19.04.1/src/ktuberling-19.04.1.tar.xz.sig
+Version  : 19.04.2
+Release  : 9
+URL      : https://download.kde.org/stable/applications/19.04.2/src/ktuberling-19.04.2.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.04.2/src/ktuberling-19.04.2.tar.xz
+Source99 : https://download.kde.org/stable/applications/19.04.2/src/ktuberling-19.04.2.tar.xz.sig
 Summary  : A simple constructor game suitable for children and adults alike
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -73,14 +73,14 @@ locales components for the ktuberling package.
 
 
 %prep
-%setup -q -n ktuberling-19.04.1
+%setup -q -n ktuberling-19.04.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1557456797
+export SOURCE_DATE_EPOCH=1559906169
 mkdir -p clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -95,7 +95,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1557456797
+export SOURCE_DATE_EPOCH=1559906169
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ktuberling
 cp COPYING %{buildroot}/usr/share/package-licenses/ktuberling/COPYING
