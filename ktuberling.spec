@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : ktuberling
-Version  : 19.08.0
-Release  : 11
-URL      : https://download.kde.org/stable/applications/19.08.0/src/ktuberling-19.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.08.0/src/ktuberling-19.08.0.tar.xz
-Source1 : https://download.kde.org/stable/applications/19.08.0/src/ktuberling-19.08.0.tar.xz.sig
+Version  : 19.08.1
+Release  : 12
+URL      : https://download.kde.org/stable/applications/19.08.1/src/ktuberling-19.08.1.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.08.1/src/ktuberling-19.08.1.tar.xz
+Source1 : https://download.kde.org/stable/applications/19.08.1/src/ktuberling-19.08.1.tar.xz.sig
 Summary  : A simple constructor game suitable for children and adults alike
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -24,10 +24,10 @@ BuildRequires : perl
 BuildRequires : qtbase-dev mesa-dev
 
 %description
-This directory contains the greek soundfiles
+This directory contains the german soundfiles
 for the child game KTuberling.
 A big thanks goes to
-korgman <korgie@gmail.com>,
+Helmut Pozimski <mailinglist@pozimski.eu>,
 who recorded the files.
 
 %package bin
@@ -73,14 +73,14 @@ locales components for the ktuberling package.
 
 
 %prep
-%setup -q -n ktuberling-19.08.0
+%setup -q -n ktuberling-19.08.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565925975
+export SOURCE_DATE_EPOCH=1567735444
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -97,7 +97,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1565925975
+export SOURCE_DATE_EPOCH=1567735444
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ktuberling
 cp COPYING %{buildroot}/usr/share/package-licenses/ktuberling/COPYING
