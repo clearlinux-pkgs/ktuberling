@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : ktuberling
-Version  : 19.08.3
-Release  : 14
-URL      : https://download.kde.org/stable/applications/19.08.3/src/ktuberling-19.08.3.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.08.3/src/ktuberling-19.08.3.tar.xz
-Source1 : https://download.kde.org/stable/applications/19.08.3/src/ktuberling-19.08.3.tar.xz.sig
+Version  : 19.12.0
+Release  : 15
+URL      : https://download.kde.org/stable/release-service/19.12.0/src/ktuberling-19.12.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/19.12.0/src/ktuberling-19.12.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/19.12.0/src/ktuberling-19.12.0.tar.xz.sig
 Summary  : A simple constructor game suitable for children and adults alike
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -24,10 +24,10 @@ BuildRequires : perl
 BuildRequires : qtbase-dev mesa-dev
 
 %description
-This directory contains the greek soundfiles
+This directory contains the german soundfiles
 for the child game KTuberling.
 A big thanks goes to
-korgman <korgie@gmail.com>,
+Helmut Pozimski <mailinglist@pozimski.eu>,
 who recorded the files.
 
 %package bin
@@ -73,14 +73,15 @@ locales components for the ktuberling package.
 
 
 %prep
-%setup -q -n ktuberling-19.08.3
+%setup -q -n ktuberling-19.12.0
+cd %{_builddir}/ktuberling-19.12.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573188320
+export SOURCE_DATE_EPOCH=1576566816
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -97,11 +98,11 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1573188320
+export SOURCE_DATE_EPOCH=1576566816
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ktuberling
-cp %{_builddir}/ktuberling-19.08.3/COPYING %{buildroot}/usr/share/package-licenses/ktuberling/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/ktuberling-19.08.3/COPYING.DOC %{buildroot}/usr/share/package-licenses/ktuberling/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
+cp %{_builddir}/ktuberling-19.12.0/COPYING %{buildroot}/usr/share/package-licenses/ktuberling/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/ktuberling-19.12.0/COPYING.DOC %{buildroot}/usr/share/package-licenses/ktuberling/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
 pushd clr-build
 %make_install
 popd
@@ -771,14 +772,211 @@ popd
 /usr/share/ktuberling/sounds/fr/chapeau.wav
 /usr/share/ktuberling/sounds/fr/cheveux.wav
 /usr/share/ktuberling/sounds/fr/cravate.wav
+/usr/share/ktuberling/sounds/fr/egypte_ane.wav
+/usr/share/ktuberling/sounds/fr/egypte_arche.wav
+/usr/share/ktuberling/sounds/fr/egypte_chameau.wav
+/usr/share/ktuberling/sounds/fr/egypte_charette.wav
+/usr/share/ktuberling/sounds/fr/egypte_colonne.wav
+/usr/share/ktuberling/sounds/fr/egypte_femme.wav
+/usr/share/ktuberling/sounds/fr/egypte_fille.wav
+/usr/share/ktuberling/sounds/fr/egypte_garcon.wav
+/usr/share/ktuberling/sounds/fr/egypte_herbe.wav
+/usr/share/ktuberling/sounds/fr/egypte_homme.wav
+/usr/share/ktuberling/sounds/fr/egypte_oasis.wav
+/usr/share/ktuberling/sounds/fr/egypte_oiseaux.wav
+/usr/share/ktuberling/sounds/fr/egypte_palmier.wav
+/usr/share/ktuberling/sounds/fr/egypte_pont.wav
+/usr/share/ktuberling/sounds/fr/egypte_puits.wav
+/usr/share/ktuberling/sounds/fr/egypte_pyramide.wav
+/usr/share/ktuberling/sounds/fr/egypte_route.wav
+/usr/share/ktuberling/sounds/fr/egypte_sphinx.wav
+/usr/share/ktuberling/sounds/fr/lune_astronaute.wav
+/usr/share/ktuberling/sounds/fr/lune_etoile-filante.wav
+/usr/share/ktuberling/sounds/fr/lune_etoile.wav
+/usr/share/ktuberling/sounds/fr/lune_extraterrestre.wav
+/usr/share/ktuberling/sounds/fr/lune_fusee.wav
+/usr/share/ktuberling/sounds/fr/lune_hotel.wav
+/usr/share/ktuberling/sounds/fr/lune_monstre.wav
+/usr/share/ktuberling/sounds/fr/lune_ovni.wav
+/usr/share/ktuberling/sounds/fr/lune_planete.wav
+/usr/share/ktuberling/sounds/fr/lune_radar.wav
+/usr/share/ktuberling/sounds/fr/lune_rover.wav
+/usr/share/ktuberling/sounds/fr/lune_satellite.wav
+/usr/share/ktuberling/sounds/fr/lune_signe.wav
+/usr/share/ktuberling/sounds/fr/lune_terre.wav
 /usr/share/ktuberling/sounds/fr/lunettes-de-soleil.wav
 /usr/share/ktuberling/sounds/fr/lunettes.wav
 /usr/share/ktuberling/sounds/fr/moustache.wav
 /usr/share/ktuberling/sounds/fr/nez.wav
+/usr/share/ktuberling/sounds/fr/noel_Tux-le-pingouin.wav
+/usr/share/ktuberling/sounds/fr/noel_ange.wav
+/usr/share/ktuberling/sounds/fr/noel_arbre.wav
+/usr/share/ktuberling/sounds/fr/noel_bonhomme-de-neige.wav
+/usr/share/ktuberling/sounds/fr/noel_botte.wav
+/usr/share/ktuberling/sounds/fr/noel_bougie.wav
+/usr/share/ktuberling/sounds/fr/noel_boule-de-noel.wav
+/usr/share/ktuberling/sounds/fr/noel_boule.wav
+/usr/share/ktuberling/sounds/fr/noel_branche-de-gui.wav
+/usr/share/ktuberling/sounds/fr/noel_branche-de-houx.wav
+/usr/share/ktuberling/sounds/fr/noel_chaussure.wav
+/usr/share/ktuberling/sounds/fr/noel_chouette.wav
+/usr/share/ktuberling/sounds/fr/noel_comete.wav
+/usr/share/ktuberling/sounds/fr/noel_etoile.wav
+/usr/share/ktuberling/sounds/fr/noel_flocon.wav
+/usr/share/ktuberling/sounds/fr/noel_guirlande-lumineuse.wav
+/usr/share/ktuberling/sounds/fr/noel_guirlande.wav
+/usr/share/ktuberling/sounds/fr/noel_lapin.wav
+/usr/share/ktuberling/sounds/fr/noel_lune.wav
+/usr/share/ktuberling/sounds/fr/noel_paquet-cadeau.wav
+/usr/share/ktuberling/sounds/fr/noel_renne.wav
+/usr/share/ktuberling/sounds/fr/noel_tortue.wav
 /usr/share/ktuberling/sounds/fr/noeud-papillon.wav
 /usr/share/ktuberling/sounds/fr/oeil.wav
 /usr/share/ktuberling/sounds/fr/oreille.wav
+/usr/share/ktuberling/sounds/fr/papillons_aile.wav
+/usr/share/ktuberling/sounds/fr/papillons_ailes.wav
+/usr/share/ktuberling/sounds/fr/papillons_cercle.wav
+/usr/share/ktuberling/sounds/fr/papillons_cercles.wav
+/usr/share/ktuberling/sounds/fr/papillons_coeur.wav
+/usr/share/ktuberling/sounds/fr/papillons_corps.wav
+/usr/share/ktuberling/sounds/fr/papillons_forme-violette.wav
+/usr/share/ktuberling/sounds/fr/papillons_oeil.wav
+/usr/share/ktuberling/sounds/fr/papillons_spirale.wav
+/usr/share/ktuberling/sounds/fr/patate_ballon.wav
+/usr/share/ktuberling/sounds/fr/patate_baton.wav
+/usr/share/ktuberling/sounds/fr/patate_bouche.wav
+/usr/share/ktuberling/sounds/fr/patate_boucle-d-oreille.wav
+/usr/share/ktuberling/sounds/fr/patate_chapeau.wav
+/usr/share/ktuberling/sounds/fr/patate_chaussure.wav
+/usr/share/ktuberling/sounds/fr/patate_cheveu.wav
+/usr/share/ktuberling/sounds/fr/patate_cheveux.wav
+/usr/share/ktuberling/sounds/fr/patate_cravate.wav
+/usr/share/ktuberling/sounds/fr/patate_fleur.wav
+/usr/share/ktuberling/sounds/fr/patate_jupe.wav
+/usr/share/ktuberling/sounds/fr/patate_lunettes-de-soleil.wav
+/usr/share/ktuberling/sounds/fr/patate_lunettes.wav
+/usr/share/ktuberling/sounds/fr/patate_manteau.wav
+/usr/share/ktuberling/sounds/fr/patate_moustache.wav
+/usr/share/ktuberling/sounds/fr/patate_nez.wav
+/usr/share/ktuberling/sounds/fr/patate_noeud-papillon.wav
+/usr/share/ktuberling/sounds/fr/patate_oeil.wav
+/usr/share/ktuberling/sounds/fr/patate_oreille.wav
+/usr/share/ktuberling/sounds/fr/patate_parapluie.wav
+/usr/share/ktuberling/sounds/fr/patate_short.wav
+/usr/share/ktuberling/sounds/fr/patate_sourcil.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_ananas.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_anchois.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_brocoli.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_champignon.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_concombre.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_fromage.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_lardon.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_oignon.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_olive.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_origan.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_pepperoni.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_piment.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_poivre.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_poivron.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_salami.wav
+/usr/share/ktuberling/sounds/fr/pizzeria_tomate.wav
+/usr/share/ktuberling/sounds/fr/robin_Tux-Robin.wav
+/usr/share/ktuberling/sounds/fr/robin_Tux-l-enfant.wav
+/usr/share/ktuberling/sounds/fr/robin_Tux-la-jeune-fille.wav
+/usr/share/ktuberling/sounds/fr/robin_Tux-la-sorciere.wav
+/usr/share/ktuberling/sounds/fr/robin_Tux-le-frere.wav
+/usr/share/ktuberling/sounds/fr/robin_Tux-le-garde.wav
+/usr/share/ktuberling/sounds/fr/robin_Tux-le-petit.wav
+/usr/share/ktuberling/sounds/fr/robin_Tux-le-prince.wav
+/usr/share/ktuberling/sounds/fr/robin_Tux-le-sheriff.wav
+/usr/share/ktuberling/sounds/fr/robin_arc.wav
+/usr/share/ktuberling/sounds/fr/robin_assiette.wav
+/usr/share/ktuberling/sounds/fr/robin_avis-recherche.wav
+/usr/share/ktuberling/sounds/fr/robin_chandelles-allumees.wav
+/usr/share/ktuberling/sounds/fr/robin_chandelles.wav
+/usr/share/ktuberling/sounds/fr/robin_cible.wav
+/usr/share/ktuberling/sounds/fr/robin_cle.wav
+/usr/share/ktuberling/sounds/fr/robin_coupe.wav
+/usr/share/ktuberling/sounds/fr/robin_flacon.wav
+/usr/share/ktuberling/sounds/fr/robin_fleche.wav
+/usr/share/ktuberling/sounds/fr/robin_fleches.wav
+/usr/share/ktuberling/sounds/fr/robin_guitare.wav
+/usr/share/ktuberling/sounds/fr/robin_heu.wav
+/usr/share/ktuberling/sounds/fr/robin_j-ai-une-idee.wav
+/usr/share/ktuberling/sounds/fr/robin_j-aime.wav
+/usr/share/ktuberling/sounds/fr/robin_j-examine.wav
+/usr/share/ktuberling/sounds/fr/robin_je-dors.wav
+/usr/share/ktuberling/sounds/fr/robin_je-me-fache.wav
+/usr/share/ktuberling/sounds/fr/robin_je-ris.wav
+/usr/share/ktuberling/sounds/fr/robin_je-suis-malade.wav
+/usr/share/ktuberling/sounds/fr/robin_lettre.wav
+/usr/share/ktuberling/sounds/fr/robin_note.wav
+/usr/share/ktuberling/sounds/fr/robin_notes.wav
+/usr/share/ktuberling/sounds/fr/robin_pigeon-volant.wav
+/usr/share/ktuberling/sounds/fr/robin_pigeon.wav
+/usr/share/ktuberling/sounds/fr/robin_poison.wav
+/usr/share/ktuberling/sounds/fr/robin_poisson.wav
+/usr/share/ktuberling/sounds/fr/robin_pomme.wav
+/usr/share/ktuberling/sounds/fr/robin_quoi.wav
+/usr/share/ktuberling/sounds/fr/robin_tasse.wav
+/usr/share/ktuberling/sounds/fr/robin_tir.wav
+/usr/share/ktuberling/sounds/fr/robin_vase.wav
+/usr/share/ktuberling/sounds/fr/robin_wouah.wav
+/usr/share/ktuberling/sounds/fr/robot_antenne.wav
+/usr/share/ktuberling/sounds/fr/robot_ballon.wav
+/usr/share/ktuberling/sounds/fr/robot_base.wav
+/usr/share/ktuberling/sounds/fr/robot_bloc.wav
+/usr/share/ktuberling/sounds/fr/robot_bras.wav
+/usr/share/ktuberling/sounds/fr/robot_corps.wav
+/usr/share/ktuberling/sounds/fr/robot_fusee.wav
+/usr/share/ktuberling/sounds/fr/robot_main.wav
+/usr/share/ktuberling/sounds/fr/robot_oeil.wav
+/usr/share/ktuberling/sounds/fr/robot_panneau.wav
+/usr/share/ktuberling/sounds/fr/robot_pieds.wav
+/usr/share/ktuberling/sounds/fr/robot_pince.wav
+/usr/share/ktuberling/sounds/fr/robot_roue.wav
+/usr/share/ktuberling/sounds/fr/robot_tete.wav
+/usr/share/ktuberling/sounds/fr/robot_tige.wav
 /usr/share/ktuberling/sounds/fr/sourcil.wav
+/usr/share/ktuberling/sounds/fr/tv_accident.wav
+/usr/share/ktuberling/sounds/fr/tv_arbre.wav
+/usr/share/ktuberling/sounds/fr/tv_ballon.wav
+/usr/share/ktuberling/sounds/fr/tv_barriere.wav
+/usr/share/ktuberling/sounds/fr/tv_benne-basculante.wav
+/usr/share/ktuberling/sounds/fr/tv_bicyclette.wav
+/usr/share/ktuberling/sounds/fr/tv_camion-de-depannage.wav
+/usr/share/ktuberling/sounds/fr/tv_camion-de-pompier.wav
+/usr/share/ktuberling/sounds/fr/tv_camion.wav
+/usr/share/ktuberling/sounds/fr/tv_caravane.wav
+/usr/share/ktuberling/sounds/fr/tv_chemin.wav
+/usr/share/ktuberling/sounds/fr/tv_cloture.wav
+/usr/share/ktuberling/sounds/fr/tv_cycliste.wav
+/usr/share/ktuberling/sounds/fr/tv_echelle.wav
+/usr/share/ktuberling/sounds/fr/tv_ecole.wav
+/usr/share/ktuberling/sounds/fr/tv_elephant.wav
+/usr/share/ktuberling/sounds/fr/tv_femme.wav
+/usr/share/ktuberling/sounds/fr/tv_feu.wav
+/usr/share/ktuberling/sounds/fr/tv_filet-de-volley.wav
+/usr/share/ktuberling/sounds/fr/tv_fumee.wav
+/usr/share/ktuberling/sounds/fr/tv_girafe.wav
+/usr/share/ktuberling/sounds/fr/tv_guitare.wav
+/usr/share/ktuberling/sounds/fr/tv_guitariste.wav
+/usr/share/ktuberling/sounds/fr/tv_homme.wav
+/usr/share/ktuberling/sounds/fr/tv_lion.wav
+/usr/share/ktuberling/sounds/fr/tv_magasin.wav
+/usr/share/ktuberling/sounds/fr/tv_maison.wav
+/usr/share/ktuberling/sounds/fr/tv_mecanicien.wav
+/usr/share/ktuberling/sounds/fr/tv_pecheur.wav
+/usr/share/ktuberling/sounds/fr/tv_pompier.wav
+/usr/share/ktuberling/sounds/fr/tv_remorque.wav
+/usr/share/ktuberling/sounds/fr/tv_rocher.wav
+/usr/share/ktuberling/sounds/fr/tv_singe.wav
+/usr/share/ktuberling/sounds/fr/tv_tracteur-routier.wav
+/usr/share/ktuberling/sounds/fr/tv_tractopelle.wav
+/usr/share/ktuberling/sounds/fr/tv_train.wav
+/usr/share/ktuberling/sounds/fr/tv_tunnel.wav
+/usr/share/ktuberling/sounds/fr/tv_voiture.wav
+/usr/share/ktuberling/sounds/fr/tv_wagon.wav
 /usr/share/ktuberling/sounds/ga.soundtheme
 /usr/share/ktuberling/sounds/ga/beal.wav
 /usr/share/ktuberling/sounds/ga/carbhat.wav
@@ -865,6 +1063,7 @@ popd
 /usr/share/ktuberling/sounds/gl/tv_cyclist.ogg
 /usr/share/ktuberling/sounds/gl/tv_train.ogg
 /usr/share/ktuberling/sounds/gl/umbrella.ogg
+/usr/share/ktuberling/sounds/id.soundtheme
 /usr/share/ktuberling/sounds/it.soundtheme
 /usr/share/ktuberling/sounds/it/baffi.wav
 /usr/share/ktuberling/sounds/it/bocca.wav
