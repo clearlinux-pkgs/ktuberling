@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : ktuberling
-Version  : 20.04.2
-Release  : 21
-URL      : https://download.kde.org/stable/release-service/20.04.2/src/ktuberling-20.04.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.04.2/src/ktuberling-20.04.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.04.2/src/ktuberling-20.04.2.tar.xz.sig
+Version  : 20.08.0
+Release  : 22
+URL      : https://download.kde.org/stable/release-service/20.08.0/src/ktuberling-20.08.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.08.0/src/ktuberling-20.08.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.08.0/src/ktuberling-20.08.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -74,15 +74,15 @@ locales components for the ktuberling package.
 
 
 %prep
-%setup -q -n ktuberling-20.04.2
-cd %{_builddir}/ktuberling-20.04.2
+%setup -q -n ktuberling-20.08.0
+cd %{_builddir}/ktuberling-20.08.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591892567
+export SOURCE_DATE_EPOCH=1597794998
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -94,15 +94,15 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags}  VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1591892567
+export SOURCE_DATE_EPOCH=1597794998
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ktuberling
-cp %{_builddir}/ktuberling-20.04.2/COPYING %{buildroot}/usr/share/package-licenses/ktuberling/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/ktuberling-20.04.2/COPYING.DOC %{buildroot}/usr/share/package-licenses/ktuberling/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
+cp %{_builddir}/ktuberling-20.08.0/COPYING %{buildroot}/usr/share/package-licenses/ktuberling/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/ktuberling-20.08.0/COPYING.DOC %{buildroot}/usr/share/package-licenses/ktuberling/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
 pushd clr-build
 %make_install
 popd
@@ -1899,20 +1899,9 @@ popd
 /usr/share/doc/HTML/sv/ktuberling/menu-help.png
 /usr/share/doc/HTML/sv/ktuberling/menu-settings.png
 /usr/share/doc/HTML/sv/ktuberling/technical-reference.docbook
-/usr/share/doc/HTML/uk/ktuberling/button-load.png
-/usr/share/doc/HTML/uk/ktuberling/button-new.png
-/usr/share/doc/HTML/uk/ktuberling/button-print.png
-/usr/share/doc/HTML/uk/ktuberling/button-redo.png
-/usr/share/doc/HTML/uk/ktuberling/button-save.png
-/usr/share/doc/HTML/uk/ktuberling/button-undo.png
 /usr/share/doc/HTML/uk/ktuberling/index.cache.bz2
 /usr/share/doc/HTML/uk/ktuberling/index.docbook
-/usr/share/doc/HTML/uk/ktuberling/menu-edit.png
-/usr/share/doc/HTML/uk/ktuberling/menu-game.png
-/usr/share/doc/HTML/uk/ktuberling/menu-help.png
-/usr/share/doc/HTML/uk/ktuberling/menu-settings.png
 /usr/share/doc/HTML/uk/ktuberling/technical-reference.docbook
-/usr/share/doc/HTML/uk/ktuberling/toolbar.png
 
 %files license
 %defattr(0644,root,root,0755)
