@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : ktuberling
-Version  : 22.08.3
-Release  : 45
-URL      : https://download.kde.org/stable/release-service/22.08.3/src/ktuberling-22.08.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/22.08.3/src/ktuberling-22.08.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/22.08.3/src/ktuberling-22.08.3.tar.xz.sig
+Version  : 22.12.0
+Release  : 46
+URL      : https://download.kde.org/stable/release-service/22.12.0/src/ktuberling-22.12.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.12.0/src/ktuberling-22.12.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.12.0/src/ktuberling-22.12.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -21,8 +21,7 @@ BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules-data
 BuildRequires : libkdegames-dev
-BuildRequires : perl
-BuildRequires : qtbase-dev mesa-dev
+BuildRequires : qt6base-dev
 
 %description
 This directory contains the greek soundfiles
@@ -74,15 +73,15 @@ locales components for the ktuberling package.
 
 
 %prep
-%setup -q -n ktuberling-22.08.3
-cd %{_builddir}/ktuberling-22.08.3
+%setup -q -n ktuberling-22.12.0
+cd %{_builddir}/ktuberling-22.12.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1667860025
+export SOURCE_DATE_EPOCH=1670514813
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -98,11 +97,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1667860025
+export SOURCE_DATE_EPOCH=1670514813
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ktuberling
-cp %{_builddir}/ktuberling-%{version}/COPYING %{buildroot}/usr/share/package-licenses/ktuberling/4cc77b90af91e615a64ae04893fdffa7939db84c || :
-cp %{_builddir}/ktuberling-%{version}/COPYING.DOC %{buildroot}/usr/share/package-licenses/ktuberling/bd75d59f9d7d9731bfabdc48ecd19e704d218e38 || :
+cp %{_builddir}/ktuberling-%{version}/LICENSES/GFDL-1.2-or-later.txt %{buildroot}/usr/share/package-licenses/ktuberling/7697008f58568e61e7598e796eafc2a997503fde || :
+cp %{_builddir}/ktuberling-%{version}/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/ktuberling/3e8971c6c5f16674958913a94a36b1ea7a00ac46 || :
 pushd clr-build
 %make_install
 popd
@@ -1748,6 +1747,54 @@ popd
 /usr/share/ktuberling/sounds/sr/usta.ogg
 /usr/share/ktuberling/sounds/sr/uvo.ogg
 /usr/share/ktuberling/sounds/sr/znacka.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian.soundtheme
+/usr/share/ktuberling/sounds/sr@ijekavian/brkovi.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/cigara.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/krompirko.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/masna.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/mindjusa.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/naocare.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/naocare_za_sunce.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/nos.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/obrva.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/oko.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/sat.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/sesir.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/usta.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/uvo.ogg
+/usr/share/ktuberling/sounds/sr@ijekavian/znacka.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin.soundtheme
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/brkovi.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/cigara.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/krompirko.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/masna.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/mindjusa.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/naocare.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/naocare_za_sunce.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/nos.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/obrva.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/oko.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/sat.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/sesir.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/usta.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/uvo.ogg
+/usr/share/ktuberling/sounds/sr@ijekavianlatin/znacka.ogg
+/usr/share/ktuberling/sounds/sr@latin.soundtheme
+/usr/share/ktuberling/sounds/sr@latin/brkovi.ogg
+/usr/share/ktuberling/sounds/sr@latin/cigara.ogg
+/usr/share/ktuberling/sounds/sr@latin/krompirko.ogg
+/usr/share/ktuberling/sounds/sr@latin/masna.ogg
+/usr/share/ktuberling/sounds/sr@latin/mindjusa.ogg
+/usr/share/ktuberling/sounds/sr@latin/naocare.ogg
+/usr/share/ktuberling/sounds/sr@latin/naocare_za_sunce.ogg
+/usr/share/ktuberling/sounds/sr@latin/nos.ogg
+/usr/share/ktuberling/sounds/sr@latin/obrva.ogg
+/usr/share/ktuberling/sounds/sr@latin/oko.ogg
+/usr/share/ktuberling/sounds/sr@latin/sat.ogg
+/usr/share/ktuberling/sounds/sr@latin/sesir.ogg
+/usr/share/ktuberling/sounds/sr@latin/usta.ogg
+/usr/share/ktuberling/sounds/sr@latin/uvo.ogg
+/usr/share/ktuberling/sounds/sr@latin/znacka.ogg
 /usr/share/ktuberling/sounds/sv.soundtheme
 /usr/share/ktuberling/sounds/sv/fluga.wav
 /usr/share/ktuberling/sounds/sv/glasogon.wav
@@ -2031,7 +2078,6 @@ popd
 /usr/share/ktuberling/sounds/wa/tv_trin.ogg
 /usr/share/ktuberling/sounds/wa/tv_velo.ogg
 /usr/share/ktuberling/sounds/wa/tv_vweteure.ogg
-/usr/share/kxmlgui5/ktuberling/ktuberlingui.rc
 /usr/share/metainfo/org.kde.ktuberling.appdata.xml
 /usr/share/qlogging-categories5/ktuberling.categories
 
@@ -2123,8 +2169,8 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/ktuberling/4cc77b90af91e615a64ae04893fdffa7939db84c
-/usr/share/package-licenses/ktuberling/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
+/usr/share/package-licenses/ktuberling/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+/usr/share/package-licenses/ktuberling/7697008f58568e61e7598e796eafc2a997503fde
 
 %files locales -f ktuberling.lang
 %defattr(-,root,root,-)
