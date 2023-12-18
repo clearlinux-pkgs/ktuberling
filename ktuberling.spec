@@ -8,11 +8,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : ktuberling
-Version  : 23.08.3
-Release  : 60
-URL      : https://download.kde.org/stable/release-service/23.08.3/src/ktuberling-23.08.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/23.08.3/src/ktuberling-23.08.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/23.08.3/src/ktuberling-23.08.3.tar.xz.sig
+Version  : 23.08.4
+Release  : 61
+URL      : https://download.kde.org/stable/release-service/23.08.4/src/ktuberling-23.08.4.tar.xz
+Source0  : https://download.kde.org/stable/release-service/23.08.4/src/ktuberling-23.08.4.tar.xz
+Source1  : https://download.kde.org/stable/release-service/23.08.4/src/ktuberling-23.08.4.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -79,15 +79,15 @@ locales components for the ktuberling package.
 
 
 %prep
-%setup -q -n ktuberling-23.08.3
-cd %{_builddir}/ktuberling-23.08.3
+%setup -q -n ktuberling-23.08.4
+cd %{_builddir}/ktuberling-23.08.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702008399
+export SOURCE_DATE_EPOCH=1702936429
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -146,7 +146,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1702008399
+export SOURCE_DATE_EPOCH=1702936429
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ktuberling
 cp %{_builddir}/ktuberling-%{version}/LICENSES/GFDL-1.2-or-later.txt %{buildroot}/usr/share/package-licenses/ktuberling/7697008f58568e61e7598e796eafc2a997503fde || :
